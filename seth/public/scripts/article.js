@@ -51,20 +51,27 @@ var app = app || {};
 
   // DONE: Chain together a .map() and a .reduce() call to get a rough count of all words in all articles. Yes, you have to do it this way.
   Article.numWordsAll = () => {
-    return Article.all.map(articleObject => articleObject.body.length).reduce((a,b) => a + b);
+    return Article.all.map(articleObject => articleObject.body.split(' ').length).reduce((a,b) => a + b);
   };
 
-  // TODO: Chain together a .map() and a .reduce() call to produce an array of unique author names. You will probably need to use the optional accumulator argument in your reduce call.
+  // DONE: Chain together a .map() and a .reduce() call to produce an array of unique author names. You will probably need to use the optional accumulator argument in your reduce call.
   Article.allAuthors = () => {
-    return Article.all.map().reduce();
+    return Article.all.map(articleObject => articleObject.author).reduce(function (all, current) {
+      if (!all.includes(current)) all.push(current);
+      return all;
+    }, []);
   };
 
   Article.numWordsByAuthor = () => {
     return Article.allAuthors().map(author => {
-      // TODO: Transform each author string into an object with properties for the author's name, as well as the total number of words across all articles written by the specified author.
+      articleObject.author
+      // DONE: Transform each author string into an object with properties for the author's name, as well as the total number of words across all articles written by the specified author.
       // HINT: This .map() should be set up to return an object literal with two properties.
       // The first property should be pretty straightforward, but you will need to chain some combination of .filter(), .map(), and .reduce() to get the value for the second property.
-
+      return {
+        authorName:author,
+        totalWords:
+      }
     })
   };
 
