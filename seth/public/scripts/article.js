@@ -33,7 +33,7 @@ var app = app || {};
 
     // DONE: Refactor this .forEach() code, by using a .map() call instead, since what we are trying to accomplish is the transformation of one collection into another. Remember that we can set variables equal to the result of functions. So if we set a variable equal to the result of a .map(), it will be our transformed array.
     // There is no need to push to anything.
-    Article.all = rows.map(articleObject =>  new Article(articleObject));
+    Article.all = rows.map(articleObject => new Article(articleObject));
     /* OLD forEach():
     rawData.forEach(articleObject => Article.all.push(new Article(articleObject)))
 
